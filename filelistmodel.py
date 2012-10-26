@@ -71,9 +71,14 @@ class ImageListModel(QtCore.QAbstractListModel):
 
 
     def images(self):
+        """Get the list of file information objects in their current order."""
+        return self._files[:]
+
+
+    def image_names(self):
         """Get the list of image names in their current order."""
         return [ f.fileName() for f in self._files ]
-    
+
     
     def order(self, order):
         """Arrange the model's image file names in the given order.

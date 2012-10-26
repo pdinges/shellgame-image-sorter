@@ -27,6 +27,7 @@ import contextlib
 import cPickle
 import math
 import os
+import shutil
 import sys
 
 # Package imports.
@@ -96,10 +97,11 @@ class ShellGameSorter(QtGui.QMainWindow):
                                   caption="Select the directory that receives the image copies",
                                   directory=self._sourceDirectory)
         
-        
+
+        # TODO Handle IOErrors.
         for i, fileInfo in enumerate(fileInfoList):
             targetFile = "{0:0{d}}@{1}".format(i, fileInfo.fileName(), d=digits)
-            print "cp", fileInfo.absoluteFilePath(), targetDirectory, targetFile 
+            shutil.copyfile(str(fileInfo.absoluteFilePath()), os.path.join(str(targetDirectory), targetFile))
             
             
     def saveOrder(self):
