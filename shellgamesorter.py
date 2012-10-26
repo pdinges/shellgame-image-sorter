@@ -26,6 +26,7 @@
 import contextlib
 import cPickle
 import math
+import os
 import sys
 
 # Package imports.
@@ -52,7 +53,7 @@ class ShellGameSorter(QtGui.QMainWindow):
         self._sourceDirectory = ""
         self._model = None
         self._currentOrder = None
-        self.setDirectory("/home/elwedgo/bilder/fotos/Unsortiert")
+        self.setDirectory(os.getcwd())
 
     def openDirectory(self):
         """Ask the user to select a directory with images
