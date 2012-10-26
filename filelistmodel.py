@@ -25,6 +25,7 @@
 # Standard Python imports.
 import os
 import os.path
+import sys
 
 # Package imports.
 from PyQt4 import QtCore, QtGui
@@ -56,8 +57,14 @@ class ImageListModel(QtCore.QAbstractListModel):
                     return True
             return False
         
-        self._files = [ QtCore.QFileInfo(os.path.join(self._path, f))
-                        for f in os.listdir(self._path) if isImage(f) ]
+        try:
+            self._files = [ QtCore.QFileInfo(os.path.join(self._path, f))
+                            for f in os.listdir(self._path) if isImage(f) ]
+        except (OSError, IOError) as e:
+            msg = "WARNING: Cannot read images from path '{0}'.\n"
+            sys.stderr.write(msg.format(self._path))
+            self._files = []
+
         if order:
             self.order(order)
         self.__thumbnailCache = QtGui.QPixmapCache()
