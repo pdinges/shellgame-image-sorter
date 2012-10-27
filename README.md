@@ -14,7 +14,7 @@ OS X.
 
 ### Screenshot
 
-![Screenshot of the Shell Game Image Sorter.](doc/unsorted.png)
+![Screenshot of the Shell Game Image Sorter.](shellgame-image-sorter/doc/unsorted.png)
 
 
 Installation
@@ -45,14 +45,14 @@ Usage
   The program window will show thumbnails for all images in the
   directory, sorted by name.
   
-  ![Program window after opening the example directory.](doc/unsorted.png)
+  ![Program window after opening the example directory.](shellgame-image-sorter/doc/unsorted.png)
 * Sort the images using drag and drop.  Dropping an image *A* onto
   another image *B* moves *A before B* in the list.  Dropping an image
   past the end of the list moves it to the end of the list.
 
-  ![Program window while dragging an image in the example directory.](doc/unsorted_drag.png)
+  ![Program window while dragging an image in the example directory.](shellgame-image-sorter/doc/unsorted_drag.png)
 
-  ![Program window after dropping an image in the example directory.](doc/unsorted_drag.png)
+  ![Program window after dropping an image in the example directory.](shellgame-image-sorter/doc/unsorted_drag.png)
 * Select *Apply order* in the *File* menu to export the ordering.  The
   program will ask you to select a target directory.  All files will
   be *copied* to that directory.  The name of the copy will start with
@@ -76,6 +76,7 @@ available under the open-source [MIT License][mit-license].
 
 
 
+[mit-license]: [mit-license]: http://opensource.org/licenses/mit-license.php
 [pyqt]: http://www.riverbankcomputing.com/software/pyqt/intro "Python bindings for the Qt toolkit."
 [pyqt-dl]: http://www.riverbankcomputing.com/software/pyqt/download "Download PyQt4"
 [python]: http://python.org "Python programming language"
